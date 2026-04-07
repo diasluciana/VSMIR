@@ -1,0 +1,13 @@
+2026-04-07 18:13:34,632 | pc | INFO | Modulo PC iniciado
+2026-04-07 18:13:34,632 | pc | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:13:34,633 | pc | INFO | Arquivo de configuracao lido: PC.CFG
+2026-04-07 18:13:34,657 | pc | INFO | Iniciando leitura do arquivo de dados XML
+2026-04-07 18:51:16,709 | pc | INFO | Modulo PC iniciado
+2026-04-07 18:51:16,709 | pc | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:51:16,710 | pc | INFO | Arquivo de configuracao lido: PC.CFG
+2026-04-07 18:51:16,730 | pc | INFO | Iniciando leitura do arquivo de dados XML
+2026-04-07 18:51:16,746 | pc | INFO | Dados lidos. Consultas=100 Esperados=9640
+2026-04-07 18:51:16,746 | pc | INFO | Iniciando escrita do arquivo CONSULTAS
+2026-04-07 18:51:16,779 | pc | INFO | Iniciando escrita do arquivo ESPERADOS
+2026-04-07 18:51:16,788 | pc | INFO | Tempo medio por consulta: 0.000163s
+2026-04-07 18:51:16,788 | pc | INFO | Modulo PC finalizado

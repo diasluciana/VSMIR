@@ -1,0 +1,13 @@
+2026-04-07 18:13:35,314 | gli | INFO | Modulo GLI iniciado
+2026-04-07 18:13:35,314 | gli | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:13:35,332 | gli | INFO | Arquivo de configuracao lido: GLI.CFG
+2026-04-07 18:13:35,340 | gli | INFO | Iniciando leitura dos arquivos XML de documentos
+2026-04-07 18:51:17,390 | gli | INFO | Modulo GLI iniciado
+2026-04-07 18:51:17,390 | gli | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:51:17,391 | gli | INFO | Arquivo de configuracao lido: GLI.CFG
+2026-04-07 18:51:17,413 | gli | INFO | Iniciando leitura dos arquivos XML de documentos
+2026-04-07 18:51:17,853 | gli | INFO | Arquivos lidos. Documentos=1239 Palavras=159492 Termos=9459
+2026-04-07 18:51:17,854 | gli | INFO | Iniciando escrita da lista invertida
+2026-04-07 18:51:17,906 | gli | INFO | Tempo medio por documento: 0.000356s
+2026-04-07 18:51:17,906 | gli | INFO | Tempo medio por palavra: 0.000003s
+2026-04-07 18:51:17,906 | gli | INFO | Modulo GLI finalizado

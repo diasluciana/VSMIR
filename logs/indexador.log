@@ -1,0 +1,22 @@
+2026-04-07 18:13:35,934 | indexador | INFO | Modulo Indexador iniciado
+2026-04-07 18:13:35,935 | indexador | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:13:35,936 | indexador | INFO | Arquivo de configuracao lido: INDEX.CFG
+2026-04-07 18:13:35,939 | indexador | INFO | Iniciando leitura da lista invertida
+2026-04-07 18:13:35,940 | indexador | INFO | Dados lidos. Documentos=0 Termos=0
+2026-04-07 18:13:35,947 | indexador | INFO | Iniciando processamento do modelo vetorial
+2026-04-07 18:13:35,947 | indexador | INFO | Iniciando persistencia do modelo
+2026-04-07 18:13:35,998 | indexador | INFO | Tempo de leitura de dados: 0.001329s
+2026-04-07 18:13:35,999 | indexador | INFO | Tempo medio por documento: 0.000009s
+2026-04-07 18:13:35,999 | indexador | INFO | Tempo medio por palavra: 0.000009s
+2026-04-07 18:13:35,999 | indexador | INFO | Modulo Indexador finalizado
+2026-04-07 18:51:18,510 | indexador | INFO | Modulo Indexador iniciado
+2026-04-07 18:51:18,510 | indexador | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:51:18,511 | indexador | INFO | Arquivo de configuracao lido: INDEX.CFG
+2026-04-07 18:51:18,513 | indexador | INFO | Iniciando leitura da lista invertida
+2026-04-07 18:51:18,739 | indexador | INFO | Dados lidos. Documentos=1215 Termos=9459
+2026-04-07 18:51:18,739 | indexador | INFO | Iniciando processamento do modelo vetorial
+2026-04-07 18:51:18,779 | indexador | INFO | Iniciando persistencia do modelo
+2026-04-07 18:51:18,946 | indexador | INFO | Tempo de leitura de dados: 0.225782s
+2026-04-07 18:51:18,946 | indexador | INFO | Tempo medio por documento: 0.000033s
+2026-04-07 18:51:18,947 | indexador | INFO | Tempo medio por palavra: 0.000004s
+2026-04-07 18:51:18,947 | indexador | INFO | Modulo Indexador finalizado

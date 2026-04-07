@@ -1,0 +1,20 @@
+2026-04-07 18:13:36,622 | buscador | INFO | Modulo Buscador iniciado
+2026-04-07 18:13:36,622 | buscador | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:13:36,623 | buscador | INFO | Arquivo de configuracao lido: BUSCA.CFG
+2026-04-07 18:13:36,641 | buscador | INFO | Iniciando leitura do modelo
+2026-04-07 18:13:36,644 | buscador | INFO | Iniciando leitura das consultas
+2026-04-07 18:13:36,647 | buscador | INFO | Dados lidos. Consultas=0
+2026-04-07 18:13:36,649 | buscador | INFO | Iniciando processamento de buscas
+2026-04-07 18:13:36,649 | buscador | INFO | Iniciando escrita dos resultados
+2026-04-07 18:13:36,664 | buscador | INFO | Tempo medio por consulta: 0.000005s
+2026-04-07 18:13:36,665 | buscador | INFO | Modulo Buscador finalizado
+2026-04-07 18:51:19,541 | buscador | INFO | Modulo Buscador iniciado
+2026-04-07 18:51:19,541 | buscador | INFO | Iniciando leitura do arquivo de configuracao
+2026-04-07 18:51:19,542 | buscador | INFO | Arquivo de configuracao lido: BUSCA.CFG
+2026-04-07 18:51:19,565 | buscador | INFO | Iniciando leitura do modelo
+2026-04-07 18:51:19,607 | buscador | INFO | Iniciando leitura das consultas
+2026-04-07 18:51:19,608 | buscador | INFO | Dados lidos. Consultas=100
+2026-04-07 18:51:19,610 | buscador | INFO | Iniciando processamento de buscas
+2026-04-07 18:51:19,851 | buscador | INFO | Iniciando escrita dos resultados
+2026-04-07 18:51:19,990 | buscador | INFO | Tempo medio por consulta: 0.002407s
+2026-04-07 18:51:19,990 | buscador | INFO | Modulo Buscador finalizado
