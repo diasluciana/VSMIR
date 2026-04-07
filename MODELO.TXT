@@ -1,0 +1,20 @@
+Formato do modelo vetorial salvo em JSON (RESULT/modelo_vetorial.json)
+
+1) version: string de versao do formato
+2) weighting: configuracao de ponderacao
+   - scheme: tfidf
+   - tf: raw_count
+   - idf_variant: log10 ou ln
+3) document_count: numero total de documentos
+4) vocabulary_size: numero de termos do vocabulario
+5) documents: lista com ids de documentos
+6) doc_vectors: dicionario por documento
+   - chave: id do documento (string)
+   - valor: mapa termo -> peso tf-idf
+7) doc_norms: norma euclidiana por documento
+8) idf: mapa termo -> valor de idf
+
+Uso no buscador:
+- A consulta e tokenizada com as mesmas regras do indexador.
+- Cada termo tem peso base 1 (multiplicado por frequencia na consulta e por idf).
+- Similaridade: cosseno entre vetor da consulta e vetor do documento.
