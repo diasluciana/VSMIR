@@ -86,7 +86,7 @@ Finally, the Search module loads the model and processed queries, computes cosin
 
 ## System Architecture Diagram
 
-Visual representation of the system architecture (source ![info.pdf](./info.pdf)):
+Visual representation of the system architecture (source info.pdf):
 
 ![Vector Space Model Diagram](./diagramaVectorModel.png)
 
