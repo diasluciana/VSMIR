@@ -1,103 +1,111 @@
-# Sistema de Recuperacao em Memoria (Modelo Vetorial)
+# In-Memory Information Retrieval System (Vector Space Model)
 
-Implementacao em Python de um sistema de Recuperacao da Informacao dividido em 4 modulos, seguindo as especificacoes do `info.pdf`.
+This project presents a Python implementation of an Information Retrieval system structured into four modular components, following the specifications defined in `info.pdf`.
 
-## Estrutura
+## Project Structure
 
-- `SRC/pc.py`: Processador de Consultas
-- `SRC/gli.py`: Gerador de Lista Invertida
-- `SRC/indexador.py`: Indexador Vetorial (tf-idf)
-- `SRC/buscador.py`: Buscador
-- `SRC/common.py`: utilitarios de configuracao, normalizacao, CSV e log
-- `RESULT/`: arquivos gerados
-- `logs/`: logs de execucao de cada modulo
-- `MODELO.TXT`: descricao do formato salvo do modelo
-- `RESULTADOS.csv`: saida final do buscador
+- SRC/pc.py: Query Processor
+- SRC/gli.py: Inverted List Generator
+- SRC/indexador.py: Vector Indexer (tf-idf)
+- SRC/buscador.py: Search Module
+- SRC/common.py: Utilities for configuration, normalization, CSV handling, and logging
+- RESULT/: Generated output files
+- logs/: Execution logs for each module
+- MODELO.TXT: Description of the model storage format
+- RESULTADOS.csv: Final search output
 
-## Dependencias
+## Dependencies
 
 - Python 3.10+
-- `nltk` (opcional, o sistema tem fallback por regex se nao estiver instalado)
+- nltk (optional; the system provides a regex-based fallback if not installed)
 
-## Configuracoes
+## Configuration
 
-Os arquivos exigidos ja estao na raiz:
+The required configuration files are already provided at the project root:
 
-- `PC.CFG`
-- `GLI.CFG`
-- `INDEX.CFG`
-- `BUSCA.CFG`
+- PC.CFG
+- GLI.CFG
+- INDEX.CFG
+- BUSCA.CFG
 
-Ajuste os caminhos para os XML reais da base CysticFibrosis2 dentro de `data/`.
+Users should update the file paths to point to the actual XML files from the CysticFibrosis2 collection located in the data/ directory.
 
-## Base CysticFibrosis2 (data/)
+## CysticFibrosis2 Dataset (data/)
 
-A pasta `data/` contem os arquivos reais da colecao:
+The data/ directory contains the original collection files:
 
-- `cf74.xml`, `cf75.xml`, `cf76.xml`, `cf77.xml`, `cf78.xml`, `cf79.xml`: documentos usados no GLI
-- `cfquery.xml`: consultas usadas no Processador de Consultas
-- `cfc-2.dtd` e `cfcquery-2.dtd`: definicoes DTD dos XML
-- `Modern Information Retrieval - Cystic Fibrosis Collection.htm`: arquivo descritivo da colecao
+- cf74.xml, cf75.xml, cf76.xml, cf77.xml, cf78.xml, cf79.xml: document corpus used by the Inverted List Generator
+- cfquery.xml: query set used by the Query Processor
+- cfc-2.dtd and cfcquery-2.dtd: XML DTD definitions
+- Modern Information Retrieval - Cystic Fibrosis Collection.htm: collection description file
 
-Mapeamento no pipeline:
+Pipeline Mapping:
 
-- `PC.CFG` le `data/cfquery.xml`
-- `GLI.CFG` le `data/cf74.xml` ate `data/cf79.xml`
-- `INDEX.CFG` consome `RESULT/lista_invertida.csv`
-- `BUSCA.CFG` consome modelo e consultas processadas
+- PC.CFG reads data/cfquery.xml
+- GLI.CFG reads data/cf74.xml through data/cf79.xml
+- INDEX.CFG consumes RESULT/lista_invertida.csv
+- BUSCA.CFG consumes the vector model and processed queries
 
-## Execucao
+## Execution
 
-Da raiz do projeto:
+From the project root directory:
 
-```bash
 python3 SRC/pc.py --config PC.CFG
 python3 SRC/gli.py --config GLI.CFG
 python3 SRC/indexador.py --config INDEX.CFG
 python3 SRC/buscador.py --config BUSCA.CFG
-```
 
-## Saidas esperadas
+## Expected Outputs
 
-1. `RESULT/consultas.csv`
-2. `RESULT/esperados.csv`
-3. `RESULT/lista_invertida.csv`
-4. `RESULT/modelo_vetorial.json`
-5. `RESULTADOS.csv`
+1. RESULT/consultas.csv
+2. RESULT/esperados.csv
+3. RESULT/lista_invertida.csv
+4. RESULT/modelo_vetorial.json
+5. RESULTADOS.csv
 
-## Regras implementadas
+## Implemented Features
 
-- Processamento em batch (ler tudo -> processar tudo -> salvar tudo)
-- Logs por modulo com inicio/fim, fases de processamento, contagens e tempos medios
-- Normalizacao textual (maiusculas, sem acentos, sem pontuacao, sem `;`)
-- Indexacao vetorial tf-idf
-- Busca por similaridade de cosseno
+- Batch processing (read all data → process → write all outputs)
+- Module-specific logging, including start/end timestamps, processing stages, counts, and average execution times
+- Text normalization (uppercase conversion, accent removal, punctuation removal, exclusion of ;)
+- Vector space indexing using tf-idf
+- Retrieval based on cosine similarity
 
-## Pipeline do Sistema
+## System Pipeline
 
-A pipeline segue quatro etapas sequenciais. Primeiro, o Processador de Consultas transforma `cfquery.xml` em dois CSVs (`consultas.csv` e `esperados.csv`) com texto normalizado. Em seguida, o GLI percorre os XML de documentos (`cf74.xml` a `cf79.xml`) e gera a lista invertida com repeticao de documento por ocorrencia do termo. Depois, o Indexador converte essa lista invertida em um modelo vetorial tf-idf persistido em JSON. Por fim, o Buscador carrega modelo + consultas processadas, calcula similaridade por cosseno e grava o ranking final em `RESULTADOS.csv`.
+The system pipeline follows four sequential stages.
 
-Diagrama visual da arquitetura:
+First, the Query Processor transforms cfquery.xml into two CSV files (consultas.csv and esperados.csv) containing normalized textual data.
 
-![Diagrama do Modelo Vetorial](./diagramaVectorModel.png)
+Next, the Inverted List Generator processes the document XML files (cf74.xml to cf79.xml) and produces an inverted index, allowing document repetition according to term occurrences.
+
+Then, the Indexer converts the inverted list into a tf-idf vector space model, which is serialized and stored in JSON format.
+
+Finally, the Search module loads the model and processed queries, computes cosine similarity scores, and outputs the ranked retrieval results into RESULTADOS.csv.
+
+
+## System Architecture Diagram
+
+Visual representation of the system architecture:
+
+![Vector Space Model Diagram](./diagramaVectorModel.png)
 
 ```mermaid
 flowchart TD
-    S([Inicio]) --> Q[data/cfquery.xml]
+    S([Start]) --> Q[data/cfquery.xml]
     S --> X[data/cf74..cf79.xml]
 
-    Q --> PC[PC: Processador de Consultas]
+    Q --> PC[PC: Query Processor]
     PC --> C1[RESULT/consultas.csv]
     PC --> C2[RESULT/esperados.csv]
 
-    X --> GLI[GLI: Gerador de Lista Invertida]
+    X --> GLI[GLI: Inverted List Generator]
     GLI --> L[RESULT/lista_invertida.csv]
 
-    L --> IDX[Indexador: tf-idf]
+    L --> IDX[Indexer: tf-idf]
     IDX --> M[RESULT/modelo_vetorial.json]
 
-    C1 --> BUS[Buscador: similaridade cosseno]
+    C1 --> BUS[Search Module: cosine similarity]
     M --> BUS
     BUS --> R[RESULTADOS.csv]
-    R --> E([Fim])
-```
+    R --> E([End])
