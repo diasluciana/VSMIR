@@ -12,4 +12,3 @@ Main scripts:
 Design notes:
 - Modules follow batch processing: read all, process all, write all.
 - Each module has structured logging for observability and diagnostics.
-
