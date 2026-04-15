@@ -11,4 +11,3 @@ Contents:
 Notes:
 - These files are treated as input data.
 - The pipeline reads from this folder but does not need to overwrite original files.
-
