@@ -101,3 +101,32 @@ flowchart TD
     BUS --> R[RESULTADOS.csv]
     R --> E([End])
 ```
+
+## Result Analysis
+
+The `ResultAnalysis/` folder contains analysis tools and results for evaluating the vector model's performance.
+
+### Analysis Script
+- `analyze_resultados.py`: Python script that computes ranking metrics (precision, recall, average precision, coverage) based on `RESULTADOS.csv` and relevance labels from `RESULT/esperados.csv`.
+
+### Results Summary
+The analysis evaluated 99 queries with relevance labels. Key metrics:
+- Mean Precision@10: 0.435
+- Mean Precision@20: 0.328
+- Mean Recall@20: 0.213
+- Mean Average Precision (MAP): 0.256
+- Mean coverage of relevant documents: 0.974
+- Minimum coverage: 0.698
+- Maximum coverage: 1.0
+- Queries with full coverage: 56
+
+### Example Per-Query Metrics
+For query '00001' (1225 relevant documents):
+- Precision@10: 1.0
+- Precision@20: 1.0
+- Recall@20: 0.016
+- Average Precision: 0.970
+- Coverage: 0.979
+
+Detailed results are saved in `ResultAnalysis/analysis_results.txt`.
+```
