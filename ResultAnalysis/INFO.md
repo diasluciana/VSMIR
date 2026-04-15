@@ -29,3 +29,6 @@ The computed metrics across the labeled queries are:
 The vector model performs acceptably for initial retrieval and ranking, with good overall coverage and decent top-k precision.
 
 However, the results suggest there is room for improvement in ranking quality, especially to push more relevant documents higher in the list and increase average precision.
+
+## Detailed results
+Detailed analysis results, including per-query metrics, are saved in `analysis_results.txt`.
