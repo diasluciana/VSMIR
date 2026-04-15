@@ -1,4 +1,3 @@
-
 # RESULT/
 
 This folder stores intermediate and final artifacts produced by the pipeline.
