@@ -100,13 +100,26 @@ def main():
     stats = compute_metrics(rel, results)
     summary = summarize(stats)
 
-    print("=== Resultado da análise ===")
-    for key, value in summary.items():
-        print(f"{key}: {value}")
-    print()
-    print("Exemplo de métricas por query:")
-    for item in stats[:5]:
-        print(item)
+    # Find best and worst queries by average precision
+    if stats:
+        best_query = max(stats, key=lambda x: x["avg_precision"])
+        worst_query = min(stats, key=lambda x: x["avg_precision"])
+
+    with open("ResultAnalysis/analysis_results.txt", "w", encoding="utf-8") as f:
+        f.write("=== Resultado da análise ===\n")
+        for key, value in summary.items():
+            f.write(f"{key}: {value}\n")
+        f.write("\n")
+        f.write("Exemplo de métricas por query:\n")
+        for item in stats[:5]:
+            f.write(f"{item}\n")
+        f.write("\n")
+        if stats:
+            f.write("Melhor resultado (maior Average Precision):\n")
+            f.write(f"{best_query}\n")
+            f.write("\n")
+            f.write("Pior resultado (menor Average Precision):\n")
+            f.write(f"{worst_query}\n")
 
 
 if __name__ == "__main__":

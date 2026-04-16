@@ -15,3 +15,9 @@ Exemplo de métricas por query:
 {'qid': '00003', 'relevant_docs': 43, 'p10': 0.3, 'p20': 0.25, 'recall20': 0.11627906976744186, 'avg_precision': 0.17775763204086556, 'coverage': 1.0}
 {'qid': '00004', 'relevant_docs': 9, 'p10': 0.0, 'p20': 0.1, 'recall20': 0.2222222222222222, 'avg_precision': 0.08758006909774832, 'coverage': 1.0}
 {'qid': '00005', 'relevant_docs': 131, 'p10': 0.8, 'p20': 0.7, 'recall20': 0.10687022900763359, 'avg_precision': 0.25114702601489297, 'coverage': 0.8320610687022901}
+
+Melhor resultado (maior Average Precision):
+{'qid': '00001', 'relevant_docs': 1225, 'p10': 1.0, 'p20': 1.0, 'recall20': 0.0163265306122449, 'avg_precision': 0.9702732978702098, 'coverage': 0.9787755102040816}
+
+Pior resultado (menor Average Precision):
+{'qid': '00012', 'relevant_docs': 7, 'p10': 0.0, 'p20': 0.0, 'recall20': 0.0, 'avg_precision': 0.019268870269430752, 'coverage': 1.0}
